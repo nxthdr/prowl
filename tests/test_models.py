@@ -1,4 +1,4 @@
-from pounce.models import Probe, Protocol
+from prowl.models import Probe, Protocol
 from ipaddress import ip_address
 
 def test_probe_str():
