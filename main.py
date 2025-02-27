@@ -1,12 +1,22 @@
-from prowl.models import Probe, Protocol
-from ipaddress import ip_address
+from prowl.models import Target, Protocol
+from ipaddress import ip_network
+from prowl.traceroutes import yarrp
+from prowl.mappers import SequentialFlowMapper
 
 if __name__ == "__main__":
 
-    dst_addr = ip_address("2606:4700:4700::1111")
     src_port, dst_port = 24000, 33434
-    protocol = Protocol.ICMP6
+    mapper = SequentialFlowMapper()
+    targets = [
+        Target(
+            prefix=ip_network("1.1.1.0/24"),
+            protocol=Protocol.ICMP,
+            min_ttl=1,
+            max_ttl=30,
+            n_intitial_flows=6
+        )
+    ]
 
-    for ttl in range(1, 30):
-        probe = Probe(dst_addr, src_port, dst_port, ttl, protocol)
+    probes = yarrp(targets, mapper, src_port, dst_port)
+    for probe in probes:
         print(probe)

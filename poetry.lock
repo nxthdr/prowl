@@ -49,6 +49,50 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
+name = "pygfc"
+version = "1.0.5"
+description = "Implementation of a Generalized-Feistel Cipher for generating random permutations."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "pygfc-1.0.5-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:dd51b29d43ce80419d89a4094abb8ae18bdf3dd305974e91830035596dfe3f92"},
+    {file = "pygfc-1.0.5-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:ce951014fc3c1b7b402d1a349df425a8d06e76c166848f9c0d3e5688f60f22ba"},
+    {file = "pygfc-1.0.5-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:4d04e8c0626570999ff9fb4a731b25eae0cf7ce91f5abc83f426cfa2e7e6c275"},
+    {file = "pygfc-1.0.5-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:676d4036eb525de94b7c38f23698392364e50750bef55030b0c792cc723bd2b0"},
+    {file = "pygfc-1.0.5-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:60efdaabdc8a8e0c02d87f56eecbdbcf53df5a851a700c21b6629c55270f4cad"},
+    {file = "pygfc-1.0.5-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:819bb4da04c8b740befa85f1727788164229be094e0fda1a69c02bcc6f2e820d"},
+    {file = "pygfc-1.0.5-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:258d2b175401003e68fa8dd3f6eb3f972b06be0942090212709ed23cf98239d1"},
+    {file = "pygfc-1.0.5-cp36-cp36m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bc4635c6feabdf74f6845a60b336234ce50b25bb38d4674cd7814b064dbfa6f7"},
+    {file = "pygfc-1.0.5-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7c11cb233402171f59706cbfb452754bb5fb3fdcd2c562185a239dec5db620f7"},
+    {file = "pygfc-1.0.5-cp36-cp36m-musllinux_1_1_i686.whl", hash = "sha256:1eaf8ca7542e79b8cc5dce51a26c72ecce01fa1162408f8c1eaf7af84e28f378"},
+    {file = "pygfc-1.0.5-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:6a728d6f0a28713510e40d4a7e365995d72af4f222df4761117a6b3b7330aa2a"},
+    {file = "pygfc-1.0.5-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:c1d032cd6e6f8b259d85d9c1093912aa6bcbe6b93e5f342c9cfffd7324dd6034"},
+    {file = "pygfc-1.0.5-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:6dc9f4d8da11cb0eb79104a43523ad994a1aa22b870712c2b7a77d47b13440ba"},
+    {file = "pygfc-1.0.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5561bde1b4fdc447c5d05924bbb42c8fb8785e1e37ca4f939c81c296038bd03f"},
+    {file = "pygfc-1.0.5-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:fff5aba9369814f2c41b2beab4fa0a423eaabe7329894ded0c1338c329a2b357"},
+    {file = "pygfc-1.0.5-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:44a089b78a0bb9b7262897215a11e9ce8203f44466b7d6af3528ce76bd361fd1"},
+    {file = "pygfc-1.0.5-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2bee293c5dbc6bf2c4059438af0cb78b46d5ca85360e9b4f53ade3f81851f004"},
+    {file = "pygfc-1.0.5-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:d7023d98aa927cf0795850e4dcbc130f37244a8167fd8ff1cf64dbb8b82551dd"},
+    {file = "pygfc-1.0.5-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:8a1ff585e073c9e0a310406073b19b5b836e57bc948cb016658e9f9bcde54520"},
+    {file = "pygfc-1.0.5-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:991770d4ea13a481cc29491b317cdb3aaf52b7010c0c6296cca6efcd821e0617"},
+    {file = "pygfc-1.0.5-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:a709a8fb73e7473de24a2ad7e09cda2d5800530b1e5625c31bae1e478db76a8b"},
+    {file = "pygfc-1.0.5-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:843797854cb203744536c49d2b3a27eecc7a66216bee5e18852b71a087a8de21"},
+    {file = "pygfc-1.0.5-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:b6c2e62b31711cf7f9befff6f2b4ca1b67cb3aaad3b2fe3239a91deea6255b9f"},
+    {file = "pygfc-1.0.5-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:da80f143aead77fb0b741029e179ae24a6569e57e38c7134bebb49745e42d020"},
+    {file = "pygfc-1.0.5-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a382419308c5316629d795f6fe0712f515485aabfddb9c80e5a24981a8046054"},
+    {file = "pygfc-1.0.5-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7464055da80027cd0ec08cfe80352170948075bbf14302bccaedbb769d519df3"},
+    {file = "pygfc-1.0.5-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:a3526a9160b963b5d529b207819595e5438768d038f15b68c116e83dc93ea28f"},
+    {file = "pygfc-1.0.5-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:378cee6578989c7567c648092fa67745a430139319f85b2d95558137260ab4c6"},
+    {file = "pygfc-1.0.5-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:3dc51ab6345dfc5bc2c7bd6cc7cbd711345d129fa1162a49440790d6b95fda0e"},
+    {file = "pygfc-1.0.5-pp37-pypy37_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:b0e0f07637f9fddd61664e21a20998ecd59c588c9e55a66ec76ca25b68a671d1"},
+    {file = "pygfc-1.0.5-pp37-pypy37_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b160e81056770c39ef63c188e332891243210da040dac9ed9e1996bb26e91ba6"},
+    {file = "pygfc-1.0.5-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:3a3a2a92f6513e3b23ccda0fc9f55de523b0038699225aa2dd4b5ba22e6517b3"},
+    {file = "pygfc-1.0.5-pp38-pypy38_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:c93a40950a01884e71009897892f90e3e7f493cd7ed59e93b03095c5a1b81c84"},
+    {file = "pygfc-1.0.5-pp38-pypy38_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:494f39c4c8b4629eed35e6792c16f2893d54baa82ae89b88e9b9a25b1cda82b0"},
+    {file = "pygfc-1.0.5.tar.gz", hash = "sha256:94e524aac53eb8893ddaad54c0d97e4323e64a223ee0393de5ee8549949b55af"},
+]
+
+[[package]]
 name = "pytest"
 version = "8.3.4"
 description = "pytest: simple powerful testing with Python"
@@ -71,4 +115,4 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "2d6527c71b22d0e88bbba31dad63ac44bede7d9535395740a0a190eaa31c46f7"
+content-hash = "62b1148ed968388b1302ab5fd96ec1c3b4968bf09ecb87a3c9f4be3680155bce"

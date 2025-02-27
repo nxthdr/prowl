@@ -1,4 +1,4 @@
-from ipaddress import IPv4Address, IPv6Address
+from prowl.typing import IPNetwork, IPAddress
 from dataclasses import dataclass
 
 
@@ -9,7 +9,7 @@ class Protocol:
 
 @dataclass
 class Probe:
-    dst_addr: IPv4Address | IPv6Address
+    dst_addr: IPAddress
     src_port: int
     dst_port: int
     ttl: int
@@ -17,3 +17,12 @@ class Probe:
 
     def __str__(self):
         return f"{self.dst_addr},{self.src_port},{self.dst_port},{self.ttl},{self.protocol}"
+
+
+@dataclass
+class Target:
+    prefix: IPNetwork
+    protocol: Protocol
+    min_ttl: int
+    max_ttl: int
+    n_intitial_flows: int
