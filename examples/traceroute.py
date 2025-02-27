@@ -2,7 +2,7 @@ from ipaddress import ip_network
 
 from prowl.mappers import SequentialFlowMapper
 from prowl.models import Protocol, Target
-from prowl.traceroutes import yarrp
+from prowl.tools import traceroute
 
 if __name__ == "__main__":
 
@@ -18,6 +18,6 @@ if __name__ == "__main__":
         )
     ]
 
-    probes = yarrp(targets, mapper, src_port, dst_port)
+    probes = traceroute(targets, mapper, src_port, dst_port)
     for probe in probes:
         print(probe)
