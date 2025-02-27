@@ -4,6 +4,10 @@ from prowl.typing import IPAddress, IPNetwork
 
 
 class Protocol:
+    """
+    Enumeration of supported protocols.
+    """
+
     ICMP = "icmp"
     ICMP6 = "icmp6"
     UDP = "udp"
@@ -11,6 +15,11 @@ class Protocol:
 
 @dataclass
 class Probe:
+    """
+    A probe is a packet sent to a destination address, given a protocol at a given TTL.
+    Also includes the source and destination ports.
+    """
+
     dst_addr: IPAddress
     src_port: int
     dst_port: int
@@ -23,8 +32,13 @@ class Probe:
 
 @dataclass
 class Target:
+    """
+    A target is a network prefix, a protocol, and a range of TTLs.
+    Also includes the number of flows to generate.
+    """
+
     prefix: IPNetwork
     protocol: Protocol
     min_ttl: int
     max_ttl: int
-    n_intitial_flows: int
+    n_flows: int
