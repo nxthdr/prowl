@@ -1,7 +1,8 @@
-from prowl.models import Target, Protocol
 from ipaddress import ip_network
-from prowl.traceroutes import yarrp
+
 from prowl.mappers import SequentialFlowMapper
+from prowl.models import Protocol, Target
+from prowl.traceroutes import yarrp
 
 if __name__ == "__main__":
 
@@ -13,7 +14,7 @@ if __name__ == "__main__":
             protocol=Protocol.ICMP,
             min_ttl=1,
             max_ttl=30,
-            n_intitial_flows=6
+            n_intitial_flows=6,
         )
     ]
 

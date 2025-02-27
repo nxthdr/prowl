@@ -1,5 +1,7 @@
-from prowl.models import Probe, Protocol
 from ipaddress import ip_address
+
+from prowl.models import Probe, Protocol
+
 
 def test_probe_str():
     """

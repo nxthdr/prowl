@@ -1,15 +1,17 @@
 from ipaddress import ip_address
 from typing import List
 
-from prowl.defaults import DEFAULT_PROBE_SRC_PORT, DEFAULT_PROBE_DST_PORT
-from prowl.models import Target, Probe
+from prowl.defaults import DEFAULT_PROBE_DST_PORT, DEFAULT_PROBE_SRC_PORT
+from prowl.models import Probe, Target
 from prowl.typing import FlowMapper
 
+
 def yarrp(
-        targets: List[Target],
-        mapper: FlowMapper,
-        probe_src_port: int = DEFAULT_PROBE_SRC_PORT,
-        probe_dst_port: int = DEFAULT_PROBE_DST_PORT) ->  List[Probe]:
+    targets: List[Target],
+    mapper: FlowMapper,
+    probe_src_port: int = DEFAULT_PROBE_SRC_PORT,
+    probe_dst_port: int = DEFAULT_PROBE_DST_PORT,
+) -> List[Probe]:
 
     probes = []
     for target in targets:
@@ -19,12 +21,14 @@ def yarrp(
                 addr_offset, port_offset = mapper.offset(flow_id, dst_prefix_int)
                 dst_addr = dst_prefix_int + addr_offset
                 src_port = probe_src_port + port_offset
-                probes.append(Probe(
-                    dst_addr=ip_address(dst_addr),
-                    src_port=src_port,
-                    dst_port=probe_dst_port,
-                    ttl=ttl,
-                    protocol=target.protocol
-                ))
+                probes.append(
+                    Probe(
+                        dst_addr=ip_address(dst_addr),
+                        src_port=src_port,
+                        dst_port=probe_dst_port,
+                        ttl=ttl,
+                        protocol=target.protocol,
+                    )
+                )
 
     return probes

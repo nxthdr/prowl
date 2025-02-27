@@ -1,11 +1,13 @@
-from prowl.typing import IPNetwork, IPAddress
 from dataclasses import dataclass
+
+from prowl.typing import IPAddress, IPNetwork
 
 
 class Protocol:
     ICMP = "icmp"
     ICMP6 = "icmp6"
     UDP = "udp"
+
 
 @dataclass
 class Probe:

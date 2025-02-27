@@ -1,5 +1,5 @@
 """
-Originally from diamond-miner/diamond_miner/mappers.py
+Originally from diamond-miner/tests/test_mappers.py
 https://github.com/dioptra-io/diamond-miner/blob/1c9ec96def9b336948678540d93f902dd01c5b5d/tests/test_mappers.py
 
 MIT License
