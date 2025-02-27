@@ -30,10 +30,10 @@ if __name__ == "__main__":
             protocol=Protocol.ICMP,
             min_ttl=1,
             max_ttl=30,
-            n_intitial_flows=6,
+            n_flows=6,
         )
     ]
 
-    probes = traceroute(targets, mapper, src_port, dst_port)
+    probes = traceroute(targets, mapper)
     for probe in probes:
         print(probe)

@@ -24,7 +24,7 @@ def ping(
     probes = []
     for target in targets:
         dst_prefix_int = int(target.prefix.network_address)
-        for flow_id in range(target.n_intitial_flows):
+        for flow_id in range(target.n_flows):
             addr_offset, port_offset = mapper.offset(flow_id, dst_prefix_int)
             dst_addr = dst_prefix_int + addr_offset
             src_port = probe_src_port + port_offset
@@ -56,7 +56,7 @@ def traceroute(
     probes = []
     for target in targets:
         dst_prefix_int = int(target.prefix.network_address)
-        for flow_id in range(target.n_intitial_flows):
+        for flow_id in range(target.n_flows):
             for ttl in range(target.min_ttl, target.max_ttl + 1):
                 addr_offset, port_offset = mapper.offset(flow_id, dst_prefix_int)
                 dst_addr = dst_prefix_int + addr_offset
