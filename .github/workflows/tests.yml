@@ -8,7 +8,7 @@ jobs:
       matrix:
         python-version: ["3.12", "3.13"]
         poetry-version: ["latest"]
-        os: [ubuntu-22.04, macos-latest] # GFC/PyGFC is not compiling on `windows-latest` yet (https://github.com/maxmouchet/gfc/issues/21)
+        os: [ubuntu-22.04, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
