@@ -5,7 +5,11 @@
 
 Library to generate [caracal](https://github.com/dioptra-io/caracal) / [caracat](https://github.com/maxmouchet/caracat) probes. Also intended to be used with [saimiris](https://github.com/nxthdr/saimiris).
 
-## Installation
+```bash
+pip install prowl
+```
+
+## Development
 
 First create a virtual environment with [poetry](https://python-poetry.org/).
 
@@ -24,6 +28,6 @@ poetry install
 You can find examples in the `examples` directory.
 
 ```bash
-python examples/traceroute.py
 python examples/ping.py
+python examples/traceroute.py
 ```
