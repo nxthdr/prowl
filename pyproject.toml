@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "prowl"
-version = "0.1.0"
+version = "0.1.1"
 description = "Generate caracal/caracat/saimiris probes and build awesome probing tools."
 authors = ["matthieugouel <matthieu.gouel@protonmail.com>"]
 readme = "README.md"
