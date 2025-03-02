@@ -1,5 +1,8 @@
 # Prowl
 
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/nxthdr/prowl/tests.yml?logo=github&label=tests)](https://github.com/nxthdr/prowl/actions/workflows/tests.yml)
+[![PyPI](https://img.shields.io/pypi/v/prowl?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/prowl/)
+
 > [!WARNING]
 > Currently in early-stage development.
 
