@@ -1,6 +1,6 @@
 # Prowl
 
-[![Tests Status](https://img.shields.io/github/actions/workflow/status/nxthdr/prowl/tests.yml?logo=github&label=tests)](https://github.com/nxthdr/prowl/actions/workflows/tests.yml)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/nxthdr/prowl/cicd.yml?logo=github&label=cicd)](https://github.com/nxthdr/prowl/actions/workflows/cicd.yml)
 [![PyPI](https://img.shields.io/pypi/v/prowl?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/prowl/)
 
 > [!WARNING]
