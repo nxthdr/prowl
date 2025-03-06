@@ -12,7 +12,7 @@ from prowl.mappers import (
     ReverseByteFlowMapper,
     SequentialFlowMapper,
 )
-from prowl.typing import FlowMapper
+from prowl.types import FlowMapper
 
 
 def _test_mapper(mapper: FlowMapper, prefix: int, prefix_size: int):

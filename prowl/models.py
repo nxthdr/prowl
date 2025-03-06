@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from prowl.typing import IPAddress, IPNetwork
+from prowl.types import IPAddress, IPNetwork
 
 
 class Protocol:

@@ -3,7 +3,7 @@ from typing import List
 
 from prowl.defaults import DEFAULT_PROBE_DST_PORT, DEFAULT_PROBE_SRC_PORT
 from prowl.models import Probe, Target
-from prowl.typing import FlowMapper
+from prowl.types import FlowMapper
 
 
 def ping(

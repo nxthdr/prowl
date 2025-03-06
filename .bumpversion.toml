@@ -22,3 +22,6 @@ post_commit_hooks = []
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
+
+[[tool.bumpversion.files]]
+filename = "prowl/__init__.py"
