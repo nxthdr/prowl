@@ -8,9 +8,9 @@ class Protocol:
     Enumeration of supported protocols.
     """
 
-    ICMP = "icmp"
-    ICMP6 = "icmp6"
-    UDP = "udp"
+    ICMP = "ICMP"
+    ICMP6 = "ICMPv6"
+    UDP = "UDP"
 
 
 @dataclass
