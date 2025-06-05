@@ -3,9 +3,6 @@
 [![CICD Status](https://img.shields.io/github/actions/workflow/status/nxthdr/prowl/cicd.yml?logo=github&label=cicd)](https://github.com/nxthdr/prowl/actions/workflows/cicd.yml)
 [![PyPI](https://img.shields.io/pypi/v/prowl?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/prowl/)
 
-> [!WARNING]
-> Currently in early-stage development.
-
 Library to generate [caracal](https://github.com/dioptra-io/caracal) / [caracat](https://github.com/maxmouchet/caracat) probes. Also intended to be used with [saimiris](https://github.com/nxthdr/saimiris).
 
 To use it as a standalone library, you can install it without any extra:
