@@ -14,8 +14,12 @@ cli = [
 ]
 
 [dependency-groups]
-dev = [
-    "bump-my-version>=1.2.7",
+test = [
     "pytest>=8.3.5",
     "ruff>=0.9.9",
+]
+dev = [
+    {include-group = "test"},
+    "bump-my-version>=1.2.7",
+    "pydantic>=2.12",
 ]
