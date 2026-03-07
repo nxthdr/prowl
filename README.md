@@ -36,10 +36,88 @@ python -m prowl --help
 
 ## Development
 
-This projects use [uv](https://github.com/astral-sh/uv) as package and project manager.
+This project uses [uv](https://github.com/astral-sh/uv) as package and project manager.
 
-Once uv installed, you can run the CLI app:
+### Setup
+
+Install the project with all extras and the dev dependency group:
 
 ```bash
-uv run -m prowl
+uv sync --all-extras --dev
+```
+
+This installs the library, the CLI extra (`typer`), and dev tools (`pytest`, `ruff`, `bump-my-version`).
+
+### Running the CLI
+
+```bash
+uv run -m prowl --help
+```
+
+### Testing
+
+```bash
+uv run pytest
+```
+
+### Linting
+
+```bash
+uv run ruff check .
+uv run ruff format .
+```
+
+### Dependency Groups
+
+The project has two dependency groups:
+
+- **test**: `pytest` and `ruff`. Used by CI to run tests without installing heavy dev tools.
+- **dev**: includes `test` plus `bump-my-version` and `pydantic`. Used for local development and releasing.
+
+CI runs `uv sync --all-extras --no-dev --group test` to avoid installing `bump-my-version` (which pulls `pydantic-core`, a native Rust extension). This keeps CI fast and avoids Python version compatibility issues with PyO3.
+
+### Bumping a Version
+
+Version bumping is handled by [bump-my-version](https://github.com/callowayproject/bump-my-version). It updates the version in `pyproject.toml` and `prowl/__init__.py`, creates a commit, and tags it.
+
+```bash
+# Patch release (e.g. 0.3.0 -> 0.3.1)
+uv run bump-my-version bump patch
+
+# Minor release (e.g. 0.3.0 -> 0.4.0)
+uv run bump-my-version bump minor
+
+# Major release (e.g. 0.3.0 -> 1.0.0)
+uv run bump-my-version bump major
+```
+
+Then push the commit and tag:
+
+```bash
+git push && git push --tags
+```
+
+The configuration lives in `.bumpversion.toml`.
+
+### Docker
+
+Build the Docker image locally:
+
+```bash
+docker build -t prowl .
+docker run prowl --help
+```
+
+### Updating the Lockfile
+
+After changing dependencies in `pyproject.toml`, regenerate the lockfile:
+
+```bash
+uv lock
+```
+
+To upgrade all dependencies to their latest compatible versions:
+
+```bash
+uv lock --upgrade
 ```
