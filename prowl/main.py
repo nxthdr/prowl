@@ -9,11 +9,11 @@ pip install prowl[app]
 """
 
 import sys
+from collections.abc import Callable
 from ipaddress import ip_network
-from typing import Callable, Dict
+from typing import Annotated
 
 import typer
-from typing_extensions import Annotated
 
 from prowl.mappers import (
     IntervalFlowMapper,
@@ -26,12 +26,12 @@ from prowl.types import FlowMapper
 
 from .models import Target
 
-TOOLS: Dict[str, Callable] = {
+TOOLS: dict[str, Callable] = {
     "ping": ping,
     "traceroute": traceroute,
 }
 
-MAPPER: Dict[str, FlowMapper] = {
+MAPPER: dict[str, FlowMapper] = {
     "sequential": SequentialFlowMapper,
     "random": RandomFlowMapper,
     "reverse": ReverseByteFlowMapper,

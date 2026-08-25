@@ -1,5 +1,4 @@
 from ipaddress import ip_address
-from typing import List
 
 from prowl.defaults import DEFAULT_PROBE_DST_PORT, DEFAULT_PROBE_SRC_PORT
 from prowl.models import Probe, Target
@@ -7,11 +6,11 @@ from prowl.types import FlowMapper
 
 
 def ping(
-    targets: List[Target],
+    targets: list[Target],
     mapper: FlowMapper,
     probe_src_port: int = DEFAULT_PROBE_SRC_PORT,
     probe_dst_port: int = DEFAULT_PROBE_DST_PORT,
-) -> List[Probe]:
+) -> list[Probe]:
     """
     Generates a list of probes for a set of targets using the given flow mapper.
     Replicates the behavior of the Traceroute tool.
@@ -42,11 +41,11 @@ def ping(
 
 
 def traceroute(
-    targets: List[Target],
+    targets: list[Target],
     mapper: FlowMapper,
     probe_src_port: int = DEFAULT_PROBE_SRC_PORT,
     probe_dst_port: int = DEFAULT_PROBE_DST_PORT,
-) -> List[Probe]:
+) -> list[Probe]:
     """
     Generates a list of probes for a set of targets using the given flow mapper.
     Replicates the behavior of the Traceroute tool.
